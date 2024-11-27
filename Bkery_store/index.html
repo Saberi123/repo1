@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bakery Shop</title>
+    <link rel="stylesheet" href="bakery.css">
+</head>
+<body>
+ 
+    <h1>Welcome to the Online Bakery Shop!</h1>
+ 
+    <div id="item-list">
+        <!-- Bakery items will be dynamically displayed here -->
+    </div>
+ 
+    <h2>Your Cart:</h2>
+    <div id="cart">
+        <!-- Cart items will be dynamically displayed here -->
+    </div>
+ 
+    <script src="bakery.js"></script>
+ 
+</body>
+</html>
+ 
+ 
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+ 
+h1 {
+    text-align: center;
+}
+ 
+h2 {
+    margin-top: 20px;
+}
+ 
+#item-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+ 
+.item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+    width: 200px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+ 
+.item:hover {
+    transform: scale(1.05);
+}
+ 
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+ 
+button:hover {
+    background-color: #45a049;
+}
+ 
+#cart {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+ 
+#cart div {
+    margin-bottom: 10px;
+}
+ 
+ 
+ 
+function BakeryItem(name, price, weight) {
+    this.name = name;
+    this.price = price;
+    this.weight = weight;
+}
+ 
+// Add a method to BakeryItem prototype to display details
+BakeryItem.prototype.getDetails = function() {
+    return `${this.name} - $${this.price} | Weight: ${this.weight}g`;
+}
+ 
+// Create BakeryItem objects
+const bakeryItems = [
+    new BakeryItem("Chocolate Cake", 15.99, 500),
+    new BakeryItem("Vanilla Pastry", 2.99, 150),
+    new BakeryItem("Almond Croissant", 3.49, 120),
+    new BakeryItem("Strawberry Cake", 18.99, 600)
+];
+ 
+let cart = [];  // Array to store cart items
+ 
+// Function to render bakery items
+function renderItems() {
+    const itemListDiv = document.getElementById("item-list");
+    itemListDiv.innerHTML = "";  // Clear the list before rendering
+ 
+    bakeryItems.forEach((item, index) => {
+        const itemDiv = document.createElement("div");
+        itemDiv.classList.add("item");
+        itemDiv.innerHTML = `
+            <h3>${item.name}</h3>
+            <p><strong>Price:</strong> $${item.price}</p>
+            <p><strong>Weight:</strong> ${item.weight}g</p>
+            <button onclick="addToCart(${index})">Add to Cart</button>
+        `;
+        itemListDiv.appendChild(itemDiv);
+    });
+}
+ 
+// Function to add an item to the cart
+function addToCart(index) {
+    const item = bakeryItems[index];
+    cart.push(item);
+    alert(`${item.name} has been added to your cart!`);
+    renderCart();  // Update the cart display
+}
+ 
+// Function to render the cart
+function renderCart() {
+    const cartDiv = document.getElementById("cart");
+    cartDiv.innerHTML = "";  // Clear current cart
+ 
+    if (cart.length === 0) {
+        cartDiv.innerHTML = "<p>Your cart is empty!</p>";
+    } else {
+        cart.forEach(item => {
+            const cartItemDiv = document.createElement("div");
+            cartItemDiv.innerHTML = `<p>${item.name} - $${item.price} | Weight: ${item.weight}g</p>`;
+            cartDiv.appendChild(cartItemDiv);
+        });
+    }
+}
+renderItems();
+ 

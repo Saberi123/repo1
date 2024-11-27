@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .Categories{
+            background-image: linear-gradient((to right,#020024, #090979,#00d4ff));
+            height: 100vh;
+            width: 100vw;
+            background-color: #9e9ee8;
+        
+    
+        }
+        .Categories h1{
+            display: block;
+        }
+        .Boxa1{
+            display: flex;
+            justify-content: center;
+        }
+        .box1{
+            border: 2px solid black;
+            /* background-color: black; */
+            height: 230px;
+            width: 200px;
+            margin-right: 20px;
+        }
+        .Boxa2{
+            display: flex;
+            justify-content: center;
+        }
+        .box2{
+            border: 2px solid black;
+            /* background-color: black; */
+            height: 230px;
+            width: 200px;
+            margin-right: 20px;
+            margin-top: 10px;
+        }
+        .box1{
+            background-image: url("cat1.jpg");
+            background-size: cover;
+        }
+        .box1:hover{
+            transform: scale(1.1);
+            border: 2px solid rgb(80, 77, 77);
+        }
+        .select{
+            margin-left: 30px;
+            margin-top: 20px;
+            width: 150px;
+            height: 30px;
+            border-radius: 3px;
+        }
+        .select:hover{
+            background-color: rgb(156, 156, 225);
+            color: white;
+        }
+        .cat2{
+            background-image: url("book.jfif");
+            background-size: cover;
+        }
+        .cat2:hover{
+            transform: scale(1.1);
+            border: 2px solid rgb(80, 77, 77);
+        }
+        
+        
+        
+        
+    </style>
+</head>
+<body>
+    <div class="Categories">
+        <h1><center>Categories</center></h1>
+        
+        <div class="Boxa1">
+            <div class="box1  cat1">
+                <center><h1>Fiction</h1></center>
+                <button class="select" >select</button>
+
+            </div>
+            <div class="box1  cat2">
+                <center><h1>Non Fiction</h1></center>
+                <button class="select" >select</button>
+            </div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+        </div>
+        <div class="Boxa2">
+            <div class="box2"></div>
+            <div class="box2"></div>
+            <div class="box2"></div>
+            <div class="box2"></div>
+        </div>
+        
+    </div>
+   
+</body>
+</html>

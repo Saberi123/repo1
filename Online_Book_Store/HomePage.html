@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bar{
+            background-color: black;
+            display: flex;
+            border-radius: 5px;
+
+        }
+        .nav{
+           
+            color: white;
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+            margin: 5px;
+            margin-left: 15px;
+
+
+        }
+        p{
+            margin-left: 75px;
+            
+        }
+        p:hover{
+            color:red;
+        }
+        .search{
+            color: black;
+            background-color: white;
+            width: 500px;
+            height: 30px;
+            margin-top: 13px;
+            margin-left: 100px;
+            text-align: center;
+        }
+        .search:hover{
+            border: 2px solid rgb(98, 94, 94);
+        }
+        .search input{
+            border: none;
+            width: 500px;
+            height: 30px;
+            text-align: center;
+        }
+        
+        .body{
+            background-image: url("book.jfif");
+            background-size:cover;
+            height: 500px;
+            background-repeat: no-repeat;
+            margin-top: -22px;
+
+
+        }
+        .cont{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .cont h1{
+            margin-top: 30px;
+            color: white;
+            /* border: 2px solid black; */
+            animation-name: MyAnimation;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+
+        }
+        
+        
+
+        @keyframes MyAnimation{
+            0%{
+                color: white;
+
+            }
+            20%{
+                color: brown;
+            }
+            40%{
+                color: yellow;
+            }
+            60%{  
+                color: black;
+            }
+            80%{
+                  color: rgb(32, 203, 23);
+            }
+            100%{
+                color: rgb(218, 12, 12);
+            }
+        }
+        .para{
+            color: rgb(23, 23, 23);
+            font-size: 60;
+            font-weight: 800px;
+            /* margin-left: 80px; */
+            text-align: center;
+        }
+        .btn2{
+            position: absolute;
+            margin-left: 450px;
+            margin-top: 20px;
+            border: 2px solid white;
+            width: 350px;
+            height: 37px;
+            text-align: center;
+            background-color: rgb(7, 7, 7);
+            border-radius: 5pxS;
+            color: aliceblue;
+            border-radius: 10px;
+        }
+        .btn2:hover{
+            border: rgb(186, 186, 204);
+        }
+        .btn2 a{
+
+            position: absolute;
+            margin-top: 10px;
+            color: green;
+            margin-right: 5px;
+            margin-left: -23px;
+        }
+
+        
+
+
+
+    </style>
+</head>
+<body>
+    <div class="bar">
+        <div class="nav">
+            <p>Home</p>
+            <p>Categories</p>
+            <p>Contact</p>
+         </div>
+         <div class="search">
+          <input type="text" placeholder="Search Here">  
+         </div>
+    </div>
+    <div class="body">
+      <div class="cont">
+        <h1>Welcome BookLovers</h1> 
+
+      </div> 
+      <div class="para">
+       <h2>Find Books for All Ages!</h2> 
+      </div>
+      <div class="btn2">
+       <a href="categories.html">Categories</a>
+      </div>
+
+    
+    </div>
+    
+
+    
+</body>
+</html>

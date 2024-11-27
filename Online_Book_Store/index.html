@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .back{
+
+      background-image:linear-gradient(to right,#020024, #090979,#00d4ff);
+      height: 100vh;
+    }
+    .register{
+        position: absolute;
+        height: 70%;
+        width: 35%;
+        border: 2px solid rgb(103, 116, 156);
+        /* display: flex; */
+        margin-left: 420px;
+        margin-top: 100px;
+        box-shadow: rgb(36, 36, 43);
+        /* background-color: white; */
+        
+    }
+    .heading{
+        text-align: center;
+        color: white;
+       
+    }
+    form input{
+        display: block;
+        width: 300px;
+        line-height: 2;
+        margin: 10px;
+        margin-left: 80px;
+        text-align: center;
+        
+    }
+    .option{
+        position: absolute;
+        display: block;
+        margin-left: 200px;
+    }
+    .btn{
+       
+        height: 40px;
+        width: 300px;
+        margin-left: 80px;
+        border: 2px solid rgb(50, 49, 49);
+        border-radius: 10px;
+       
+    }
+    .btn:hover{
+        border: rgb(43, 43, 96);
+    }
+    .Already account{
+        /* margin-left: 60px; */
+        color: white;
+
+    }
+    .login{
+        color: rgb(234, 244, 234);
+    }
+
+    </style>
+</head>
+<body>
+    <div class="back">
+        <div class="register">
+            <h1 class="heading"> Register</h1>
+        
+            <form action="">
+                <input type="text" placeholder="Name">
+                <input type="text" name="" id="" placeholder="Age">
+                <input type="email" placeholder="E-mail">
+                <select name="Book Category" id="">
+                    <option  class= "option" value="Fiction"></option>
+                    <option  class= "option" value=" Non Fiction"></option>
+                    <option  class= "option" value="Novel"></option>
+                    <option  class= "option" value="Kids Education"></option>
+                    <option  class= "option" value="Technology"></option>
+                </select>
+            </form>
+            <input type="button"  class= "btn" value="Sign Up">
+            <p class="Already account" > <center>Already have an Account? <a href="login.html" class="login">Login here</center></a></p>
+        </div>
+
+    </div>
+</body>
+</html>
