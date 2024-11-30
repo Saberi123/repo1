@@ -1,0 +1,70 @@
+doctype html
+html(lang="en")
+head 
+    title Products 
+body(style="background-color: azure;")
+    h2(style='text-align: center;') PRODUCTS
+    hr
+    nav(style="text-align: right; margin-right: 50px") 
+        a(href="/") Log Out
+    div 
+        if username === 'admin'
+            h3 Add New Product
+            form(action='/addprod', method='POST')
+                label(for="productName") Name: 
+                input(type='text', placeholder="Enter Name", name='productName') 
+                br
+                br
+                label(for="productId") Id: 
+                input(type='text', placeholder="Enter Id", name='productId')
+                br
+                br
+                label(for="productPrice") Price:
+                input(type='number', placeholder="Enter price", name='productPrice')
+                br
+                br
+                label(for="productCategory") Category:
+                input(type='text', placeholder="Enter category", name='productCategory')
+                br
+                br
+                label(for="productManufDate") Manufacturing Date:
+                input(type='date', name='productManufDate')
+                br
+                br
+                label(for="productExpDate") Expiry Date: 
+                input(type='date', name='productExpDate')
+                br
+                br
+                button(type='submit') ADD PRODUCT
+        hr
+    div
+        h2 Search Product
+        form(action='/searchprod', method='POST')
+            label(for="searchName")
+            input(type="text", placeholder="Product Name", name="searchName")
+            label(for="searchCategory")
+            input(type="text", placeholder="Product Category", name="searchCategory")
+            button(type='submit') SEARCH
+        div(style="background-color: beige") 
+            each prod in prods
+                ul
+                    li
+                        h4= prod.name
+                        p ID: #{prod.id}
+                        p Price: Rs. #{prod.price}
+                        p Category: #{prod.category}
+                        p ---------------------------------------------------
+    hr
+    div
+        h2 Explore Products
+        div 
+            each product in products
+                ul
+                    li
+                        h4= product.name
+                        p ID: #{product.id}
+                        p Price: Rs. #{product.price}
+                        p Category: #{product.category}
+                        p ---------------------------------------------------
+    hr
+    footer(style="font-size: 14px; text-align: center;") © ShrS
